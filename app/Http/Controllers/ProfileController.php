@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class ProfileController extends Controller
 {
     public function index($id){
-        $name = "Dronal Trump";
+        $name = "Donald Trump";
         $age = "75";
 
         $data = ['id'=>$id, 'name'=>$name, 'age'=>$age];
@@ -21,7 +21,7 @@ class ProfileController extends Controller
         $cookieSecure = false;
         $cookieHttpOnly = true;
 
-        // Create the cookie
+
         $cookie = Cookie::make(
             $cookieName,
             $cookieValue,
@@ -32,7 +32,6 @@ class ProfileController extends Controller
             $cookieHttpOnly
         );
 
-        // Return the response with the cookie
         return response()->json($data, 200)->withCookie($cookie);
     }
 
